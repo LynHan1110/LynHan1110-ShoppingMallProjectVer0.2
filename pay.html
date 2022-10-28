@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신용카드 결제</title>
+</head>
+<body>
+  <BODY BGCOLOR="#CCFF99"></BODY>
+  <br>
+<br>
+<b>고객께서는 신용카드 결제를 선택하셨습니다.</b></font>
+</br>
+</br>
+<label>상품정보:</label>
+<li>상품명: 쇼핑몰 테스트 상품</li>
+<li>가격: 1000원</li>
+<HR size=2 WIDTH=500 align=Center NOSHADE color=teal><br>
+<font size=-1>* 신용카드 결제를 위해 아래 정보를 입력해 주시기 바랍니다. *<p>
+</br>
+
+  <!--  아래와 같은 방법으로 BODY 부분에 스크립트를 입력하세요 -->
+<p>
+  <form name=calcform method=post>
+  <table border=0 cellpadding=0 cellspacing=1>
+  <tr><td colspan=2><font size=2 face=arial><B>구매자 정보</B></td></tr>
+  <tr><td width=130 align=right><font size=2 face=arial><B>First Name:</B> </td>
+  <td nowrap><font size=3 face=arial><input type=hidden name="realname">
+  <input type=text name="firstn" size=12 onBlur="aname()"></td></tr>
+  <tr><td width=130 align=right><font size=2 face=arial><B>Last Name:</B> </td><td><font size=3 face=arial> <input type=text name="lastn" size=17 onBlur="aname()"></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Email:</B> </td><td><font size=3 face=arial> <input type=text name=email size=18></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Daytime Phone:</B> </td><td><font size=3 face=arial> <input type=text name=DayPhone size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Company:</B> </td><td><font size=3 face=arial> <input type=text name=Company size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Street:</B> </td><td><font size=3 face=arial> <input type=text name=Street size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>City:</B> </td><td><font size=3 face=arial> <input type=text name=City size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>State:</B> </td><td><font size=2 face=arial> <SELECT NAME=State onChange="calculate();"><OPTION VALUE=""><OPTION VALUE=AL>Alabama<OPTION VALUE=AK>Alaska<OPTION VALUE=AZ>Arizona<OPTION VALUE=AR>Arkansas<OPTION VALUE=CA>California<OPTION VALUE=CO>Colorado<OPTION VALUE=CT>Connecticut<OPTION VALUE=DE>Delaware<OPTION VALUE=DC>District Of Columbia<OPTION VALUE=FL>Florida<OPTION VALUE=GA>Georgia<OPTION VALUE=HI>Hawaii<OPTION VALUE=ID>Idaho<OPTION VALUE=IL>Illinois<OPTION VALUE=IN>Indiana<OPTION VALUE=IA>Iowa<OPTION VALUE=KS>Kansas<OPTION VALUE=KY>Kentucky<OPTION VALUE=LA>Louisiana<OPTION VALUE=ME>Maine<OPTION VALUE=MD>Maryland<OPTION VALUE=MA>Massachusetts<OPTION VALUE=MI>Michigan<OPTION VALUE=MN>Minnesota<OPTION VALUE=MS>Mississippi<OPTION VALUE=MO>Missouri<OPTION VALUE=MT>Montana<OPTION VALUE=NE>Nebraska<OPTION VALUE=NV>Nevada<OPTION VALUE=NH>New Hampshire<OPTION VALUE=NJ>New Jersey<OPTION VALUE=NM>New Mexico<OPTION VALUE=NY>New York<OPTION VALUE=NC>North Carolina<OPTION VALUE=ND>North Dakota<OPTION VALUE=OH>Ohio<OPTION VALUE=OK>Oklahoma<OPTION VALUE=OR>Oregon<OPTION VALUE=PA>Pennsylvania<OPTION VALUE=RI>Rhode Island<OPTION VALUE=SC>South Carolina<OPTION VALUE=SD>South Dakota<OPTION VALUE=TN>Tennessee<OPTION VALUE=TX>Texas<OPTION VALUE=UT>Utah<OPTION VALUE=VT>Vermont<OPTION VALUE=VA>Virginia<OPTION VALUE=WA>Washington<OPTION VALUE=WV>West Virginia<OPTION VALUE=WI>Wisconsin<OPTION VALUE=WY>Wyoming<OPTION VALUE="BC">British Columbia<OPTION VALUE="AB">Alberta<OPTION VALUE="SASK">Sask<OPTION VALUE="MAN">Manitoba<OPTION VALUE="ONT">Ontario<OPTION VALUE="QUE">Quebec<OPTION VALUE="MAR">Maritimes<OPTION VALUE="NF">Newfoundland</select></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Other State/Provence:</B> </td><td><font size=3 face=arial> <input type=text name=State2 size=18></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Zip:</B> </td><td><font size=3 face=arial> <input type=text name=Zip_code value="" size=8 maxlength=8> <font size=2 face=arial></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Country:</B> </td><td><font size=2 face=arial> <select name="Country">
+  <option value=US Selected>United States
+  <option value=CA >Canada
+  <option value=GB >United Kingdom
+  <option value=AF >Afghanistan
+  <option value=AL >Albania
+  <option value=DZ >Algeria
+  <option value=AS >American Samoa
+  <option value=AD >Andorra
+  <option value=AO >Angola
+  <option value=AI >Anguilla
+  <option value=AQ >Antarctica
+  <option value=AG >Antigua and Barbuda
+  <option value=AR >Argentina
+  <option value=AM >Armenia
+  <option value=AW >Aruba
+  <option value=AU >Australia
+  <option value=AT >Austria
+  <option value=AZ >Azerbaijan
+  <option value=BS >Bahamas
+  <option value=BH >Bahrain
+  <option value=BD >Bangladesh
+  <option value=BB >Barbados
+  <option value=BY >Belarus
+  <option value=BE >Belgium
+  <option value=BZ >Belize
+  <option value=BJ >Benin
+  <option value=BM >Bermuda
+  <option value=BT >Bhutan
+  <option value=BO >Bolivia
+  <option value=BA >Bosnia and Herzegovina
+  <option value=BW >Botswana
+  <option value=BV >Bouvet Island
+  <option value=BR >Brazil
+  <option value=IO >British Indian Ocean Territory
+  <option value=BN >Brunei Darussalam
+  <option value=BG >Bulgaria
+  <option value=BF >Burkina Faso
+  <option value=BI >Burundi
+  <option value=KH >Cambodia
+  <option value=CM >Cameroon
+  <option value=CV >Cape Verde
+  <option value=KY >Cayman Islands
+  <option value=CF >Central African Republic
+  <option value=TD >Chad
+  <option value=CL >Chile
+  <option value=CN >China
+  <option value=CX >Christmas Island
+  <option value=CC >Cocos (Keeling) Islands
+  <option value=CO >Colombia
+  <option value=KM >Comoros
+  <option value=CG >Congo
+  <option value=CK >Cook Islands
+  <option value=CR >Costa Rica
+  <option value=HR >Croatia
+  <option value=CU >Cuba
+  <option value=CY >Cyprus
+  <option value=CZ >Czech Republic
+  <option value=CI >C?e d'Ivoire
+  <option value=DK >Denmark
+  <option value=DJ >Djibouti
+  <option value=DM >Dominica
+  <option value=DO >Dominican Republic
+  <option value=TP >East Timor
+  <option value=EC >Ecuador
+  <option value=EG >Egypt
+  <option value=SV >El salvador
+  <option value=GQ >Equatorial Guinea
+  <option value=ER >Eritrea
+  <option value=EE >Estonia
+  <option value=ET >Ethiopia
+  <option value=FK >Falkland Islands
+  <option value=FO >Faroe Islands
+  <option value=FJ >Fiji
+  <option value=FI >Finland
+  <option value=FR >France
+  <option value=GF >French Guiana
+  <option value=PF >French Polynesia
+  <option value=TF >French Southern Territories
+  <option value=GA >Gabon
+  <option value=GM >Gambia
+  <option value=GE >Georgia
+  <option value=DE >Germany
+  <option value=GH >Ghana
+  <option value=GI >Gibraltar
+  <option value=GR >Greece
+  <option value=GL >Greenland
+  <option value=GD >Grenada
+  <option value=GP >Guadeloupe
+  <option value=GU >Guam
+  <option value=GT >Guatemala
+  <option value=GN >Guinea
+  <option value=GW >Guinea-Bissau
+  <option value=GY >Guyana
+  <option value=HT >Haiti
+  <option value=HM >Heard Island and McDonald Islands
+  <option value=VA >Holy See (Vatican City State)
+  <option value=HN >Honduras
+  <option value=HK >Hong Kong
+  <option value=HU >Hungary
+  <option value=IS >Iceland
+  <option value=IN >India
+  <option value=ID >Indonesia
+  <option value=IR >Iran
+  <option value=IQ >Iraq
+  <option value=IE >Ireland
+  <option value=IL >Israel
+  <option value=IT >Italy
+  <option value=JM >Jamaica
+  <option value=JP >Japan
+  <option value=JO >Jordan
+  <option value=KZ >Kazakstan
+  <option value=KE >Kenya
+  <option value=KI >Kiribati
+  <option value=KW >Kuwait
+  <option value=KG >Kyrgystan
+  <option value=LA >Lao
+  <option value=LV >Latvia
+  <option value=LB >Lebanon
+  <option value=LS >Lesotho
+  <option value=LR >Liberia
+  <option value=LY >Libyan Arab Jamahiriya
+  <option value=LI >Liechtenstein
+  <option value=LT >Lithuania
+  <option value=LU >Luxembourg
+  <option value=MO >Macau
+  <option value=MK >Macedonia (FYR)
+  <option value=MG >Madagascar
+  <option value=MW >Malawi
+  <option value=MY >Malaysia
+  <option value=MV >Maldives
+  <option value=ML >Mali
+  <option value=MT >Malta
+  <option value=MH >Marshall Islands
+  <option value=MQ >Martinique
+  <option value=MR >Mauritania
+  <option value=MU >Mauritius
+  <option value=YT >Mayotte
+  <option value=MX >Mexico
+  <option value=FM >Micronesia
+  <option value=MD >Moldova
+  <option value=MC >Monaco
+  <option value=MN >Mongolia
+  <option value=MS >Montserrat
+  <option value=MA >Morocco
+  <option value=MZ >Mozambique
+  <option value=MM >Myanmar
+  <option value=NA >Namibia
+  <option value=NR >Nauru
+  <option value=NP >Nepal
+  <option value=NL >Netherlands
+  <option value=AN >Netherlands Antilles
+  <option value=NT >Neutral Zone
+  <option value=NC >New Caledonia
+  <option value=NZ >New Zealand
+  <option value=NI >Nicaragua
+  <option value=NE >Niger
+  <option value=NG >Nigeria
+  <option value=NU >Niue
+  <option value=NF >Norfolk Island
+  <option value=KP >North Korea
+  <option value=MP >Northern Mariana Islands
+  <option value=NO >Norway
+  <option value=OM >Oman
+  <option value=PK >Pakistan
+  <option value=PW >Palau
+  <option value=PA >Panama
+  <option value=PG >Papua New Guinea
+  <option value=PY >Paraguay
+  <option value=PE >Peru
+  <option value=PH >Philippines
+  <option value=PN >Pitcairn
+  <option value=PL >Poland
+  <option value=PT >Portugal
+  <option value=PR >Puerto Rico
+  <option value=QA >Qatar
+  <option value=RE >Reunion
+  <option value=RO >Romania
+  <option value=RU >Russian Federation
+  <option value=RW >Rwanda
+  <option value=SH >Saint Helena
+  <option value=KN >Saint Kitts and Nevis
+  <option value=LC >Saint Lucia
+  <option value=PM >Saint Pierre and Miquelon
+  <option value=VC >Saint Vincent and the Grenadines
+  <option value=WS >Samoa
+  <option value=SM >San Marino
+  <option value=ST >Sao Tome and Principe
+  <option value=SA >Saudi Arabia
+  <option value=SN >Senegal
+  <option value=SC >Seychelles
+  <option value=SL >Sierra Leone
+  <option value=SG >Singapore
+  <option value=SK >Slovakia
+  <option value=SI >Slovenia
+  <option value=SB >Solomon Islands
+  <option value=SO >Somalia
+  <option value=ZA >South Africa
+  <option value=GS >South Georgia
+  <option value=KR >South Korea
+  <option value=ES >Spain
+  <option value=LK >Sri Lanka
+  <option value=SD >Sudan
+  <option value=SR >Suriname
+  <option value=SJ >Svalbard and Jan Mayen Islands
+  <option value=SZ >Swaziland
+  <option value=SE >Sweden
+  <option value=CH >Switzerland
+  <option value=SY >Syria
+  <option value=TW >Taiwan
+  <option value=TJ >Tajikistan
+  <option value=TZ >Tanzania
+  <option value=TH >Thailand
+  <option value=TG >Togo
+  <option value=TK >Tokelau
+  <option value=TO >Tonga
+  <option value=TT >Trinidad and Tobago
+  <option value=TN >Tunisia
+  <option value=TR >Turkey
+  <option value=TM >Turkmenistan
+  <option value=TC >Turks and Caicos Islands
+  <option value=TV >Tuvalu
+  <option value=UG >Uganda
+  <option value=UA >Ukraine
+  <option value=AE >United Arab Emirates
+  <option value=UM >United States Minor Outlying Islands
+  <option value=UY >Uruguay
+  <option value=UZ >Uzbekistan
+  <option value=VU >Vanuatu
+  <option value=VE >Venezuela
+  <option value=VN >Viet Nam
+  <option value=VG >Virgin Islands (British)
+  <option value=VI >Virgin Islands (U.S.)
+  <option value=WF >Wallis and Futuna Islands
+  <option value=EH >Western Sahara
+  <option value=YE >Yemen
+  <option value=YU >Yugoslavia
+  <option value=ZR >Zaire
+  <option value=ZM >Zambia
+  <option value=ZW >Zimbabwe
+  </select></td></tr>
+  </table>
+  <p>
+  <table border=0 cellpadding=0 cellspacing=1>
+  <tr><td colspan=2><font size=2 face=arial><B>배달지 정보:</B> [<a href=javascript:CopyInfo();>Same as above</a>]</td></tr>
+  <tr><td width=130 align=right><font size=2 face=arial><B>First Name:</B> </td>
+  <td nowrap><font size=3 face=arial><input type=text name="Ship_firstn" size=12></td></tr>
+  <tr><td width=130 align=right><font size=2 face=arial><B>Last Name:</B> </td>
+  <td><font size=3 face=arial> <input type=text name="Ship_lastn" size=17></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Daytime Phone:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_Phone size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Company:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_Company size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Street:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_Street size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>City:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_City size=18 value=""></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>State:</B> </td><td><font size=2 face=arial> <SELECT NAME=Ship_State onChange="calculate();"><OPTION VALUE=""><OPTION VALUE=AL>Alabama<OPTION VALUE=AK>Alaska<OPTION VALUE=AZ>Arizona<OPTION VALUE=AR>Arkansas<OPTION VALUE=CA>California<OPTION VALUE=CO>Colorado<OPTION VALUE=CT>Connecticut<OPTION VALUE=DE>Delaware<OPTION VALUE=DC>District Of Columbia<OPTION VALUE=FL>Florida<OPTION VALUE=GA>Georgia<OPTION VALUE=HI>Hawaii<OPTION VALUE=ID>Idaho<OPTION VALUE=IL>Illinois<OPTION VALUE=IN>Indiana<OPTION VALUE=IA>Iowa<OPTION VALUE=KS>Kansas<OPTION VALUE=KY>Kentucky<OPTION VALUE=LA>Louisiana<OPTION VALUE=ME>Maine<OPTION VALUE=MD>Maryland<OPTION VALUE=MA>Massachusetts<OPTION VALUE=MI>Michigan<OPTION VALUE=MN>Minnesota<OPTION VALUE=MS>Mississippi<OPTION VALUE=MO>Missouri<OPTION VALUE=MT>Montana<OPTION VALUE=NE>Nebraska<OPTION VALUE=NV>Nevada<OPTION VALUE=NH>New Hampshire<OPTION VALUE=NJ>New Jersey<OPTION VALUE=NM>New Mexico<OPTION VALUE=NY>New York<OPTION VALUE=NC>North Carolina<OPTION VALUE=ND>North Dakota<OPTION VALUE=OH>Ohio<OPTION VALUE=OK>Oklahoma<OPTION VALUE=OR>Oregon<OPTION VALUE=PA>Pennsylvania<OPTION VALUE=RI>Rhode Island<OPTION VALUE=SC>South Carolina<OPTION VALUE=SD>South Dakota<OPTION VALUE=TN>Tennessee<OPTION VALUE=TX>Texas<OPTION VALUE=UT>Utah<OPTION VALUE=VT>Vermont<OPTION VALUE=VA>Virginia<OPTION VALUE=WA>Washington<OPTION VALUE=WV>West Virginia<OPTION VALUE=WI>Wisconsin<OPTION VALUE=WY>Wyoming<OPTION VALUE="BC">British Columbia<OPTION VALUE="AB">Alberta<OPTION VALUE="SASK">Sask<OPTION VALUE="MAN">Manitoba<OPTION VALUE="ONT">Ontario<OPTION VALUE="QUE">Quebec<OPTION VALUE="MAR">Maritimes<OPTION VALUE="NF">Newfoundland</select></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Other State/Provence:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_State2 size=18></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Zip:</B> </td><td><font size=3 face=arial> <input type=text name=Ship_Zip value="" size=8 maxlength=8> <font size=2 face=arial></td></tr>
+  <tr><td align=right><font size=2 face=arial><B>Country:</B> </td><td><font size=2 face=arial> <select name="Ship_Country">
+  <option value=US Selected>United States
+  <option value=CA >Canada
+  <option value=GB >United Kingdom
+  <option value=AF >Afghanistan
+  <option value=AL >Albania
+  <option value=DZ >Algeria
+  <option value=AS >American Samoa
+  <option value=AD >Andorra
+  <option value=AO >Angola
+  <option value=AI >Anguilla
+  <option value=AQ >Antarctica
+  <option value=AG >Antigua and Barbuda
+  <option value=AR >Argentina
+  <option value=AM >Armenia
+  <option value=AW >Aruba
+  <option value=AU >Australia
+  <option value=AT >Austria
+  <option value=AZ >Azerbaijan
+  <option value=BS >Bahamas
+  <option value=BH >Bahrain
+  <option value=BD >Bangladesh
+  <option value=BB >Barbados
+  <option value=BY >Belarus
+  <option value=BE >Belgium
+  <option value=BZ >Belize
+  <option value=BJ >Benin
+  <option value=BM >Bermuda
+  <option value=BT >Bhutan
+  <option value=BO >Bolivia
+  <option value=BA >Bosnia and Herzegovina
+  <option value=BW >Botswana
+  <option value=BV >Bouvet Island
+  <option value=BR >Brazil
+  <option value=IO >British Indian Ocean Territory
+  <option value=BN >Brunei Darussalam
+  <option value=BG >Bulgaria
+  <option value=BF >Burkina Faso
+  <option value=BI >Burundi
+  <option value=KH >Cambodia
+  <option value=CM >Cameroon
+  <option value=CV >Cape Verde
+  <option value=KY >Cayman Islands
+  <option value=CF >Central African Republic
+  <option value=TD >Chad
+  <option value=CL >Chile
+  <option value=CN >China
+  <option value=CX >Christmas Island
+  <option value=CC >Cocos (Keeling) Islands
+  <option value=CO >Colombia
+  <option value=KM >Comoros
+  <option value=CG >Congo
+  <option value=CK >Cook Islands
+  <option value=CR >Costa Rica
+  <option value=HR >Croatia
+  <option value=CU >Cuba
+  <option value=CY >Cyprus
+  <option value=CZ >Czech Republic
+  <option value=CI >C?e d'Ivoire
+  <option value=DK >Denmark
+  <option value=DJ >Djibouti
+  <option value=DM >Dominica
+  <option value=DO >Dominican Republic
+  <option value=TP >East Timor
+  <option value=EC >Ecuador
+  <option value=EG >Egypt
+  <option value=SV >El salvador
+  <option value=GQ >Equatorial Guinea
+  <option value=ER >Eritrea
+  <option value=EE >Estonia
+  <option value=ET >Ethiopia
+  <option value=FK >Falkland Islands
+  <option value=FO >Faroe Islands
+  <option value=FJ >Fiji
+  <option value=FI >Finland
+  <option value=FR >France
+  <option value=GF >French Guiana
+  <option value=PF >French Polynesia
+  <option value=TF >French Southern Territories
+  <option value=GA >Gabon
+  <option value=GM >Gambia
+  <option value=GE >Georgia
+  <option value=DE >Germany
+  <option value=GH >Ghana
+  <option value=GI >Gibraltar
+  <option value=GR >Greece
+  <option value=GL >Greenland
+  <option value=GD >Grenada
+  <option value=GP >Guadeloupe
+  <option value=GU >Guam
+  <option value=GT >Guatemala
+  <option value=GN >Guinea
+  <option value=GW >Guinea-Bissau
+  <option value=GY >Guyana
+  <option value=HT >Haiti
+  <option value=HM >Heard Island and McDonald Islands
+  <option value=VA >Holy See (Vatican City State)
+  <option value=HN >Honduras
+  <option value=HK >Hong Kong
+  <option value=HU >Hungary
+  <option value=IS >Iceland
+  <option value=IN >India
+  <option value=ID >Indonesia
+  <option value=IR >Iran
+  <option value=IQ >Iraq
+  <option value=IE >Ireland
+  <option value=IL >Israel
+  <option value=IT >Italy
+  <option value=JM >Jamaica
+  <option value=JP >Japan
+  <option value=JO >Jordan
+  <option value=KZ >Kazakstan
+  <option value=KE >Kenya
+  <option value=KI >Kiribati
+  <option value=KW >Kuwait
+  <option value=KG >Kyrgystan
+  <option value=LA >Lao
+  <option value=LV >Latvia
+  <option value=LB >Lebanon
+  <option value=LS >Lesotho
+  <option value=LR >Liberia
+  <option value=LY >Libyan Arab Jamahiriya
+  <option value=LI >Liechtenstein
+  <option value=LT >Lithuania
+  <option value=LU >Luxembourg
+  <option value=MO >Macau
+  <option value=MK >Macedonia (FYR)
+  <option value=MG >Madagascar
+  <option value=MW >Malawi
+  <option value=MY >Malaysia
+  <option value=MV >Maldives
+  <option value=ML >Mali
+  <option value=MT >Malta
+  <option value=MH >Marshall Islands
+  <option value=MQ >Martinique
+  <option value=MR >Mauritania
+  <option value=MU >Mauritius
+  <option value=YT >Mayotte
+  <option value=MX >Mexico
+  <option value=FM >Micronesia
+  <option value=MD >Moldova
+  <option value=MC >Monaco
+  <option value=MN >Mongolia
+  <option value=MS >Montserrat
+  <option value=MA >Morocco
+  <option value=MZ >Mozambique
+  <option value=MM >Myanmar
+  <option value=NA >Namibia
+  <option value=NR >Nauru
+  <option value=NP >Nepal
+  <option value=NL >Netherlands
+  <option value=AN >Netherlands Antilles
+  <option value=NT >Neutral Zone
+  <option value=NC >New Caledonia
+  <option value=NZ >New Zealand
+  <option value=NI >Nicaragua
+  <option value=NE >Niger
+  <option value=NG >Nigeria
+  <option value=NU >Niue
+  <option value=NF >Norfolk Island
+  <option value=KP >North Korea
+  <option value=MP >Northern Mariana Islands
+  <option value=NO >Norway
+  <option value=OM >Oman
+  <option value=PK >Pakistan
+  <option value=PW >Palau
+  <option value=PA >Panama
+  <option value=PG >Papua New Guinea
+  <option value=PY >Paraguay
+  <option value=PE >Peru
+  <option value=PH >Philippines
+  <option value=PN >Pitcairn
+  <option value=PL >Poland
+  <option value=PT >Portugal
+  <option value=PR >Puerto Rico
+  <option value=QA >Qatar
+  <option value=RE >Reunion
+  <option value=RO >Romania
+  <option value=RU >Russian Federation
+  <option value=RW >Rwanda
+  <option value=SH >Saint Helena
+  <option value=KN >Saint Kitts and Nevis
+  <option value=LC >Saint Lucia
+  <option value=PM >Saint Pierre and Miquelon
+  <option value=VC >Saint Vincent and the Grenadines
+  <option value=WS >Samoa
+  <option value=SM >San Marino
+  <option value=ST >Sao Tome and Principe
+  <option value=SA >Saudi Arabia
+  <option value=SN >Senegal
+  <option value=SC >Seychelles
+  <option value=SL >Sierra Leone
+  <option value=SG >Singapore
+  <option value=SK >Slovakia
+  <option value=SI >Slovenia
+  <option value=SB >Solomon Islands
+  <option value=SO >Somalia
+  <option value=ZA >South Africa
+  <option value=GS >South Georgia
+  <option value=KR >South Korea
+  <option value=ES >Spain
+  <option value=LK >Sri Lanka
+  <option value=SD >Sudan
+  <option value=SR >Suriname
+  <option value=SJ >Svalbard and Jan Mayen Islands
+  <option value=SZ >Swaziland
+  <option value=SE >Sweden
+  <option value=CH >Switzerland
+  <option value=SY >Syria
+  <option value=TW >Taiwan
+  <option value=TJ >Tajikistan
+  <option value=TZ >Tanzania
+  <option value=TH >Thailand
+  <option value=TG >Togo
+  <option value=TK >Tokelau
+  <option value=TO >Tonga
+  <option value=TT >Trinidad and Tobago
+  <option value=TN >Tunisia
+  <option value=TR >Turkey
+  <option value=TM >Turkmenistan
+  <option value=TC >Turks and Caicos Islands
+  <option value=TV >Tuvalu
+  <option value=UG >Uganda
+  <option value=UA >Ukraine
+  <option value=AE >United Arab Emirates
+  <option value=UM >United States Minor Outlying Islands
+  <option value=UY >Uruguay
+  <option value=UZ >Uzbekistan
+  <option value=VU >Vanuatu
+  <option value=VE >Venezuela
+  <option value=VN >Viet Nam
+  <option value=VG >Virgin Islands (British)
+  <option value=VI >Virgin Islands (U.S.)
+  <option value=WF >Wallis and Futuna Islands
+  <option value=EH >Western Sahara
+  <option value=YE >Yemen
+  <option value=YU >Yugoslavia
+  <option value=ZR >Zaire
+  <option value=ZM >Zambia
+  <option value=ZW >Zimbabwe
+  </select></td></tr>
+  </table></td></tr>
+  </table>
+  
+  <input type=hidden name=refer>
+  <input type=radio name=SaveMyInfo onclick=SaveInfo()> Save this info on my browser for future use<br>
+  <script language="javascript">
+  function getCookieVal (offset) { var endstr = document.cookie.indexOf (";", offset);  if (endstr == -1) endstr = document.cookie.length;  return unescape(document.cookie.substring(offset, endstr));}
+  function GetCookie (name) { var arg = name + "="; var alen = arg.length; var clen = document.cookie.length; var i = 0; while (i < clen) {var j = i + alen; if (document.cookie.substring(i, j) == arg) return getCookieVal (j); i = document.cookie.indexOf(" ", i) + 1; if (i == 0) break;} return null;}
+  function SetCookie (name, value) {var argv = SetCookie.arguments; var argc = SetCookie.arguments.length; var expires = (argc > 2) ? argv[2] : null; var path = (argc > 3) ? argv[3] : null; var domain = (argc > 4) ? argv[4] : null; var secure = (argc > 5) ? argv[5] : false; document.cookie = name + "=" + escape (value) + ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + ((path == null) ? "" : ("; path=" + path)) + ((domain == null) ? "" : ("; domain=" + domain)) + ((secure == true) ? "; secure" : "");}
+  var expDays = 100; var exp = new Date(); exp.setTime(exp.getTime() + (expDays*50*60*60*1000));
+  
+  function CopyInfo(){
+    document.calcform.Ship_firstn.value = document.calcform.firstn.value;
+    document.calcform.Ship_lastn.value = document.calcform.lastn.value;
+    document.calcform.Ship_Company.value = document.calcform.Company.value;
+    document.calcform.Ship_Phone.value = document.calcform.DayPhone.value;
+    document.calcform.Ship_Street.value = document.calcform.Street.value;
+    document.calcform.Ship_City.value = document.calcform.City.value;
+    document.calcform.Ship_State.selectedIndex = document.calcform.State.selectedIndex;
+    document.calcform.Ship_Zip.value = document.calcform.Zip_code.value;
+    document.calcform.Ship_Country.selectedIndex = document.calcform.Country.selectedIndex;
+    document.calcform.Ship_State2.value = document.calcform.State2.value;
+  }
+  
+  function SaveInfo(){
+    SavedInfo = new Array(document.calcform.firstn.value,
+    document.calcform.lastn.value,
+    document.calcform.email.value,
+    document.calcform.DayPhone.value,
+    document.calcform.Company.value,
+    document.calcform.Street.value,
+    document.calcform.City.value,
+    document.calcform.State.selectedIndex,
+    document.calcform.Zip_code.value,
+    document.calcform.Country.selectedIndex,
+    document.calcform.Ship_firstn.value,
+    document.calcform.Ship_lastn.value,
+    document.calcform.Ship_Phone.value,
+    document.calcform.Ship_Company.value,
+    document.calcform.Ship_Street.value,
+    document.calcform.Ship_City.value,
+    document.calcform.Ship_State.selectedIndex,
+    document.calcform.Ship_Zip.value,
+    document.calcform.Ship_Country.selectedIndex,
+    document.calcform.State2.value,
+    document.calcform.Ship_State2.value) //alert(SavedInfo)
+    SetCookie('Address',SavedInfo, exp, "/")
+  }
+  
+  function LoadInfo(){
+    a = GetCookie('Address');
+    if (a != null) {b = a.split(',');
+    document.calcform.firstn.value = b[0]
+    document.calcform.lastn.value = b[1]
+    document.calcform.email.value = b[2]
+    document.calcform.DayPhone.value = b[3]
+    document.calcform.Company.value = b[4]
+    document.calcform.Street.value = b[5]
+    document.calcform.City.value = b[6]
+    document.calcform.State.selectedIndex = b[7]
+    document.calcform.Zip_code.value = b[8]
+    document.calcform.Country.selectedIndex = b[9]
+    document.calcform.Ship_firstn.value = b[10]
+    document.calcform.Ship_lastn.value = b[11]
+    document.calcform.Ship_Phone.value = b[12]
+    document.calcform.Ship_Company.value = b[13]
+    document.calcform.Ship_Street.value = b[14]
+    document.calcform.Ship_City.value = b[15]
+    document.calcform.Ship_State.selectedIndex = b[16]
+    document.calcform.Ship_Zip.value = b[17]
+    document.calcform.Ship_Country.selectedIndex = b[18]
+    document.calcform.State2.value = b[19]
+    document.calcform.Ship_State2.value = b[20]
+  }}
+  
+  function checkItOut() {aname();
+    document.calcform.refer.value = document.location;
+    if (document.calcform.firstn.value == "") {alert("The First Name field is not filled in.");document.calcform.firstn.focus();
+    } else { if (document.calcform.lastn.value == "") {alert("The Last Name field is not filled in.");document.calcform.lastn.focus();
+    } else { if (document.calcform.email.value == "") {alert("Email field is empty."); document.calcform.email.focus();
+    } else { if (document.calcform.DayPhone.value == "") {alert("Phone Number field is empty.");document.calcform.DayPhone.focus();
+    } else { if (document.calcform.Street.value == "") {alert("Street Number field is empty."); document.calcform.Street.focus();
+    } else { if (document.calcform.City.value == "") {alert("You have not filled in the City."); document.calcform.City.focus();
+    } else { if ((document.calcform.State.options[document.calcform.State.selectedIndex].value == 0)&&(document.calcform.State2.value == "")) {alert("You have not chosen a State");document.calcform.State.focus();
+    } else { if (document.calcform.Zip_code.value == "") {alert("You need to fill in your Zip Code."); document.calcform.Zip_code.focus();
+    } else { if (document.calcform.Country.value == "") {alert("You need to slect your Country."); document.calcform.Country.focus();
+    } else { if (document.calcform.Ship_firstn.value == "") {alert("The First Name field is not filled in.");document.calcform.Ship_firstn.focus();
+    } else { if (document.calcform.Ship_lastn.value == "") {alert("The Last Name field is not filled in.");document.calcform.Ship_lastn.focus();
+    } else { if (document.calcform.Ship_Phone.value == "") {alert("Phone Number field is empty.");document.calcform.Ship_Phone.focus();
+    } else { if (document.calcform.Ship_Street.value == "") {alert("Street Number field is empty."); document.calcform.Ship_Street.focus();
+    } else { if (document.calcform.Ship_City.value == "") {alert("You have not filled in the City."); document.calcform.Ship_City.focus();
+    } else { if ((document.calcform.Ship_State.options[document.calcform.Ship_State.selectedIndex].value == 0)&&(document.calcform.Ship_State2.value == "")) {alert("You have not chosen a State");document.calcform.Ship_State.focus();
+    } else { if (document.calcform.Ship_Zip.value == "") {alert("You need to fill in your Zip Code."); document.calcform.Ship_Zip.focus();
+    } else { if (document.calcform.Ship_Country.value == "") {alert("You need to select your Country."); document.calcform.Ship_Country.focus();
+    } else { 
+    document.calcform.action = "";
+    document.calcform.submit();
+  }}}}}}}}}}}}}}}}}}
+  LoadInfo();
+  </SCRIPT>
+  </FORM>
+
+<table bgcolor=beige width=450 border=1
+       cellpadding=5 cellspacing=0 align=center>
+
+<FORM method=get ACTION="https://www.paygate.net/merchants/TEST/pay/pay.cgi">
+<INPUT type=hidden name=goodname value="쇼핑몰 테스트 상품">
+<INPUT type=hidden name=price value="1000">
+<INPUT type=hidden name=buyeremail value="null">
+<INPUT type=hidden name=currency value="WON">
+
+<tr>
+<th><FONT SIZE=-1>카드번호</th>
+<td><INPUT type="text" name=cardnumber maxlength=20 size=20>
+<br><FONT SIZE=-1>카드번호는 대쉬(-)나 공백없이 입력해주시기 바랍니다.</FONT></td>
+</tr>
+
+<tr>
+<th><FONT SIZE=-1>할부기간</th>
+<td>
+<SELECT name=cardquota>
+  <OPTION value=00>일시불
+  <OPTION value=03>3개월
+  <OPTION value=06>6개월
+  <OPTION value=09>9개월
+  <OPTION value=12>12개월
+</SELECT>
+</td>
+</tr>
+
+<tr>
+<th><FONT SIZE=-1>만기년월</th>
+<td>
+<SELECT name=cardexpm>
+ <OPTION value=01>Jan - 1
+ <OPTION value=02>Feb - 2
+ <OPTION value=03>Mar - 3
+ <OPTION value=04>Apr - 4
+ <OPTION value=05>May - 5
+ <OPTION value=06>Jun - 6
+ <OPTION value=07>Jul - 7
+ <OPTION value=08>Aug - 8
+ <OPTION value=09>Sep - 9
+ <OPTION value=10>Oct - 10
+ <OPTION value=11>Nov - 11
+ <OPTION value=12>Dec - 12
+</SELECT>
+<SELECT name=cardexpy>
+  <OPTION value=99>1999
+<OPTION value=00>2000
+<OPTION value=01>2001
+<OPTION value=02>2002
+<OPTION value=03>2003
+<OPTION value=04>2004
+<OPTION value=05>2005
+<OPTION value=06>2006
+<OPTION value=07>2007
+<OPTION value=08>2008
+<OPTION value=09>2009
+</SELECT><BR>
+</td>
+</tr>
+
+<tr>
+<th colspan=2>
+<!-- 가상으로 지불을 테스트할 경우에만 사용하십시오
+DEMO Option<BR>
+<input type=hidden name=demo value=on>
+<INPUT type=radio name=demo_result value=success checked> 지불성공 유도 
+<INPUT type=radio name=demo_result value=fail"> 지불실패 유도 
+<BR>
+-->
+<INPUT type=submit value="결제 확인">
+</th>
+</FORM>
+</tr>
+</table>
+
+
+<br>
+<p>
+
+<table border=0 cellpadding=0 cellspacing=0 width=90%>
+<tr>
+<td width=5% bgcolor=#EBEBEB>&nbsp </td>
+<td width=95% bgcolor=#EBEBEB><font size=2>
+Copyright 2022-2022 <A href="http://app.lynhan.kro.kr">Lyn Han Apps</a> All rights reserved.
+</td></tr></table>
+
+</body>
+</html>

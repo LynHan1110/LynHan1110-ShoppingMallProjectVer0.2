@@ -1,0 +1,18 @@
+<script>
+    var id = "hanlyn1110";
+    var pw = "LVC1110!lvc@";
+    var user_id = prompt("아이디를 입력하세요","");
+    var user_pw = "";
+    
+    if (id == user_id){
+        user_pw = prompt("비밀번호를 입력하세요","");
+        if(pw == user_pw){
+            document.write('<a href="./admin.html">관리자 페이지 들어가기</a>')
+        } else {
+            alert("비밀번호가 일치하지 않습니다");
+            location.reload();
+        }
+    } else {
+        alert("아이디가 일치하지 않습니다.");
+    }
+    </script>
