@@ -723,27 +723,5 @@ DEMO Option<BR>
 Copyright 2022-2022 <A href="http://app.lynhan.kro.kr">Lyn Han Apps</a> All rights reserved.
 </td></tr></table>
 
-<script>
-    $().ready(adminidnpassword)
-    
-    adminidnpassword = function (no){
-    var id = "hanlyn1110";
-        var pw = "LVC1110!lvc@";
-        var user_id = prompt("아이디를 입력하세요","");
-        var user_pw = "";
-        
-        if (id == user_id){
-            user_pw = prompt("비밀번호를 입력하세요","");
-            if(pw == user_pw){
-                document.write("./admin.html");
-            } else {
-                alert("비밀번호가 일치하지 않습니다");
-                location.reload();
-            }
-        } else {
-            alert("아이디가 일치하지 않습니다.");
-        }
-    }
-        </script>
 </body>
 </html>
